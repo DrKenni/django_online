@@ -9,6 +9,9 @@ packages = [{include = "andrey_fomichev_hw_19"}]
 [tool.poetry.dependencies]
 python = "^3.11"
 django = "^4.2.3"
+pillow = "^10.0.0"
+psycopg2-binary = "^2.9.6"
+ipython = "^8.14.0"
 
 
 [build-system]

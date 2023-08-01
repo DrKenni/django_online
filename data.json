@@ -1,0 +1,128 @@
+[
+  {
+    "model": "catalog.category",
+    "pk": 1,
+    "fields": {
+      "name": "Мясо",
+      "description": ""
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 2,
+    "fields": {
+      "name": "Рыба",
+      "description": ""
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 3,
+    "fields": {
+      "name": "Напитки",
+      "description": ""
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 4,
+    "fields": {
+      "name": "Алкоголь",
+      "description": ""
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 5,
+    "fields": {
+      "name": "Фрукты",
+      "description": ""
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 6,
+    "fields": {
+      "name": "Овощи",
+      "description": ""
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 1,
+    "fields": {
+      "name": "Яблоко",
+      "description": null,
+      "last_change": null,
+      "date_create": "2023-08-01",
+      "price": 35,
+      "preview_image": "",
+      "category": 5
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 2,
+    "fields": {
+      "name": "Помидор",
+      "description": null,
+      "last_change": null,
+      "date_create": "2023-08-01",
+      "price": 30,
+      "preview_image": "",
+      "category": 6
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 3,
+    "fields": {
+      "name": "Пиво",
+      "description": null,
+      "last_change": null,
+      "date_create": "2023-08-01",
+      "price": 100,
+      "preview_image": "",
+      "category": 4
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 4,
+    "fields": {
+      "name": "Тунец",
+      "description": null,
+      "last_change": null,
+      "date_create": "2023-08-01",
+      "price": 250,
+      "preview_image": "",
+      "category": 2
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 5,
+    "fields": {
+      "name": "Кола",
+      "description": null,
+      "last_change": null,
+      "date_create": "2023-08-01",
+      "price": 100,
+      "preview_image": "",
+      "category": 3
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 6,
+    "fields": {
+      "name": "Говядина",
+      "description": null,
+      "last_change": null,
+      "date_create": "2023-08-01",
+      "price": 350,
+      "preview_image": "",
+      "category": 1
+    }
+  }
+]
