@@ -27,12 +27,12 @@ class Command(BaseCommand):
         Category.objects.bulk_create(category_for_create)
 
         product_list = [
-            {'name': 'Яблоко', 'price': '35'},
-            {'name': 'Помидор', 'price': '30'},
-            {'name': 'Пиво', 'price': '100'},
-            {'name': 'Тунец', 'price': '250'},
-            {'name': 'Кола', 'price': '100'},
-            {'name': 'Говядина', 'price': '350'},
+            {'name': 'Яблоко', 'price': '35', 'category': '5'},
+            {'name': 'Помидор', 'price': '30', 'category': '6'},
+            {'name': 'Пиво', 'price': '100', 'category': '4'},
+            {'name': 'Тунец', 'price': '250', 'category': '2'},
+            {'name': 'Кола', 'price': '100', 'category': '3'},
+            {'name': 'Говядина', 'price': '350', 'category': '1'},
         ]
 
         products_for_create = []

@@ -1,0 +1,17 @@
+{% extends 'catalog/base.html' %}
+{% load my_tags %}
+{% block content %}
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <h1 class="display-4">{{ title }}</h1>
+    {% for object in object_list %}
+    <img class="card-img-top"
+    src="{{ object.preview_image|mymedia }}">
+    <ul class="list-unstyled mt-3 mb-4 text-start m-3">
+        <li>Цена: {{object.price}}</li>
+        <li>Категория: {{object.category}}</li>
+        <li>Дата изготовления: {{object.date_create}}</li>
+        <li>Описание: {{object.description}}</li>
+    </ul>
+    {% endfor %}
+</div>
+{% endblock %}
