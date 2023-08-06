@@ -9,3 +9,13 @@ def mymedia(val):
         return f'/media/{val}'
 
     return '/static/images/profile_nophoto.jpg'
+
+
+@register.filter()
+def limit_symbols(text):
+    if text is None:
+        return 'Описания нет'
+    elif len(text) > 50:
+        return f'{text[:50]}...'
+    else:
+        return text

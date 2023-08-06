@@ -7,10 +7,10 @@
     <img class="card-img-top"
     src="{{ object.preview_image|mymedia }}">
     <ul class="list-unstyled mt-3 mb-4 text-start m-3">
-        <li>Цена: {{object.price}}</li>
-        <li>Категория: {{object.category}}</li>
-        <li>Дата изготовления: {{object.date_create}}</li>
-        <li>Описание: {{object.description}}</li>
+        <li>Цена: {{ object.price }}</li>
+        <li>Категория: {{ object.category }}</li>
+        <li>Дата изготовления: {{ object.date_create }}</li>
+        <li>Описание: {{ object.description }}</li>
     </ul>
     {% endfor %}
 </div>

@@ -1,5 +1,6 @@
 {% extends 'catalog/base.html' %}
 {% block content %}
+{% load my_tags %}
 {% for object in object_list %}
 <div class="col-3">
     <div class="card mb-4 box-shadow">
@@ -12,7 +13,8 @@
                 <li>- Категория: {{ object.category }}</li>
                 <li>- Дата изготовления:</li>
                 <li> {{ object.date_create }}</li>
-
+                <li>- Краткое описание:</li>
+                <li> {{ object.description|limit_symbols }}</li>
             </ul>
             <nav class="ms-5">
                 <a class="p-2 btn btn-outline-primary">Купить</a>
