@@ -1,6 +1,9 @@
 {% extends 'catalog/base.html' %}
 {% block content %}
 {% load my_tags %}
+<div class="col-12 mb-2">
+       <a class="btn btn-outline-primary" href="{% url 'catalog:create_product' %}">Добавить товар</a>
+</div>
 {% for object in object_list %}
 <div class="col-3">
     <div class="card mb-4 box-shadow">
@@ -18,8 +21,12 @@
             </ul>
             <nav class="ms-5">
                 <a class="p-2 btn btn-outline-primary">Купить</a>
-                <a class="p-2 btn btn-outline-primary" href="{% url 'catalog:product_card' object.pk %}">Подробнее</a>
-
+                <a href="{% url 'catalog:product_card' object.pk %}"
+                   class="p-2 btn btn-outline-primary">Подробнее</a>
+                <a href="{% url 'catalog:update_product' object.pk %}" type="button"
+                   class="btn btn-lg btn-sm btn-outline-secondary">Изменить</a>
+                <a href="{% url 'catalog:delete_product' object.pk %}" type="button"
+                   class="btn btn-lg btn-sm btn-outline-danger">Удалить</a>
             </nav>
         </div>
     </div>
