@@ -44,7 +44,7 @@ class MaterialDetailView(DetailView):
 
 class MaterialUpdateView(UpdateView):
     model = Materials
-    fields = ('title', 'content', 'is_published',)
+    fields = ('title', 'content', 'is_published', 'preview',)
     success_url = reverse_lazy('materials:list')
 
     def form_valid(self, form):
