@@ -4,13 +4,27 @@
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
     <h1 class="display-4">{{ object.name }}</h1>
     <img class="card-img-top"
-    src="{{ object.preview_image|mymedia }}">
+         src="{{ object.preview_image|mymedia }}">
     <ul class="list-unstyled mt-3 mb-4 text-start m-3">
         <li>Цена: {{ object.price }}</li>
         <li>Категория: {{ object.category }}</li>
         <li>Дата изготовления: {{ object.date_create }}</li>
+        {% for form in formset %}
+        {% if form.version_sign == True %}
+        <h5>Активная версия</h5>
+        <li>- Номер версии: {{ form.version_number }}</li>
+        <li>- Название версии: {{ form.version_name }}</li>
+        {% else %}
+        <li>- я где-то накосячил</li>
+        {% endif %}
+        {% endfor %}
         <li>Описание: {{ object.description }}</li>
+
     </ul>
 
 </div>
+<div>
+    <a href="{% url 'catalog:product_list' %}" class="btn btn-warning">Назад</a>
+</div>
+
 {% endblock %}

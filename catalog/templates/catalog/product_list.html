@@ -2,7 +2,7 @@
 {% block content %}
 {% load my_tags %}
 <div class="col-12 mb-2">
-       <a class="btn btn-outline-primary" href="{% url 'catalog:create_product' %}">Добавить товар</a>
+    <a class="btn btn-outline-primary" href="{% url 'catalog:create_product' %}">Добавить товар</a>
 </div>
 {% for object in object_list %}
 <div class="col-3">
@@ -18,6 +18,13 @@
                 <li> {{ object.date_create }}</li>
                 <li>- Краткое описание:</li>
                 <li> {{ object.description|limit_symbols }}</li>
+                {% for form in formset %}
+                {% if form.product == object and form.version_sign == True %}
+                <h5>Активная версия</h5>
+                <li>- Номер версии: {{ form.version_number }}</li>
+                <li>- Название версии: {{ form.version_name }}</li>
+                {% endif %}
+                {% endfor %}
             </ul>
             <nav class="ms-5">
                 <a class="p-2 btn btn-outline-primary">Купить</a>
