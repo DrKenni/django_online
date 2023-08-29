@@ -14,7 +14,7 @@ def mymedia(val):
 @register.filter()
 def limit_symbols(text):
     if text is None:
-        return 'Описания нет'
+        return 'Без описания'
     elif len(text) > 50:
         return f'{text[:50]}...'
     else:
