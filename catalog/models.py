@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.db import models
 
 NULLABLE = {'null': True, 'blank': True}
@@ -23,6 +24,9 @@ class Product(models.Model):
     price = models.IntegerField(verbose_name='цена')
     preview_image = models.ImageField(verbose_name='превью', **NULLABLE)
     category = models.ForeignKey(Category, verbose_name='категория', on_delete=models.CASCADE, **NULLABLE)
+
+    owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, verbose_name='владелец', **NULLABLE,)
+    is_public = models.BooleanField(default=False, verbose_name='публикация', **NULLABLE)
 
     def __str__(self):
         return f'{self.name}({self.category}): {self.price}'

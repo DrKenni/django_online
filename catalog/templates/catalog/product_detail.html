@@ -9,22 +9,18 @@
         <li>Цена: {{ object.price }}</li>
         <li>Категория: {{ object.category }}</li>
         <li>Дата изготовления: {{ object.date_create }}</li>
-        {% for form in formset %}
-        {% if form.version_sign == True %}
+        <li>Описание: {{ object.description|default:'Без описания' }}</li>
+        {% for form in object.version_set.all %}
+        {% if form.version_sign %}
         <h5>Активная версия</h5>
         <li>- Номер версии: {{ form.version_number }}</li>
         <li>- Название версии: {{ form.version_name }}</li>
-        {% else %}
-        <li>- я где-то накосячил</li>
         {% endif %}
         {% endfor %}
-        <li>Описание: {{ object.description }}</li>
-
     </ul>
 
 </div>
 <div>
     <a href="{% url 'catalog:product_list' %}" class="btn btn-warning">Назад</a>
 </div>
-
 {% endblock %}

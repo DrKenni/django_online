@@ -67,7 +67,7 @@
       "name": "Помидор",
       "description": null,
       "last_change": null,
-      "date_create": "2023-08-01",
+      "date_create": "2023-08-09",
       "price": 30,
       "preview_image": "",
       "category": 6
@@ -104,9 +104,9 @@
     "pk": 5,
     "fields": {
       "name": "Кола",
-      "description": null,
+      "description": "",
       "last_change": null,
-      "date_create": "2023-08-01",
+      "date_create": "2023-08-24",
       "price": 100,
       "preview_image": "",
       "category": 3
@@ -123,6 +123,84 @@
       "price": 350,
       "preview_image": "",
       "category": 1
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 7,
+    "fields": {
+      "name": "Лосось",
+      "description": "свежийи и вкусный",
+      "last_change": null,
+      "date_create": "2023-08-24",
+      "price": 500,
+      "preview_image": "1676617899_2-1.jpg",
+      "category": 2
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 8,
+    "fields": {
+      "name": "Репа",
+      "description": "Посадил дед репку и говорит:\n— Расти репка сладкая-сладкая! Расти большая-пребольшая!\nВыросла репка сладкая и большая-пребольшая.\nПошел дед репку рвать: тянет-потянет, вытянуть не может.\nПозвал дед бабку.Бабка за дедку,\nДедка за репку —\nТянут-потянут, вытянуть не могут.\nПозвала бабка внучку.\nВнучка за бабку,\nБабка за дедку,\nДедка за репку —\nТянут-потянут, вытянуть не могут.\nПозвала внучка Жучку.\nЖучка за внучку,\n\nВнучка за бабку,\nБабка за дедку,\nДедка за репку —\nТянут-потянут, вытянуть не могут.\nПозвала Жучка кошку.\nКошка за Жучку,\nЖучка за внучку,\nВнучка за бабку,\nБабка за дедку,\nДедка за репку —\nТянут-потянут, вытянуть не могут.\nПозвала кошка мышку.\nМышка за кошку,\nКошка за Жучку,\nЖучка за внучку,\nВнучка за бабку,\nБабка за дедку,\nДедка за репку —\nТянут-потянут — и вытянули репку.\nВот и сказке конец, а кто слушал — молодец!",
+      "last_change": null,
+      "date_create": "2023-08-06",
+      "price": 10,
+      "preview_image": "",
+      "category": 6
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 9,
+    "fields": {
+      "name": "Редис",
+      "description": null,
+      "last_change": null,
+      "date_create": "2023-08-09",
+      "price": 45,
+      "preview_image": "",
+      "category": 6
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 10,
+    "fields": {
+      "name": "Лук",
+      "description": null,
+      "last_change": null,
+      "date_create": "2023-08-12",
+      "price": 121,
+      "preview_image": "",
+      "category": 6
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 11,
+    "fields": {
+      "name": "Вино",
+      "description": null,
+      "last_change": null,
+      "date_create": "2023-08-11",
+      "price": 175,
+      "preview_image": "",
+      "category": 4
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 12,
+    "fields": {
+      "name": "",
+      "description": "Банан",
+      "last_change": null,
+      "date_create": "2023-08-24",
+      "price": 111,
+      "preview_image": "",
+      "category": 5
     }
   }
 ]
