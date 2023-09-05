@@ -2,7 +2,9 @@
 {% block content %}
 {% load my_tags %}
 <div class="col-12 mb-2">
+    {% if perms.catalog.add_product %}
     <a class="btn btn-outline-primary" href="{% url 'catalog:create_product' %}">Добавить товар</a>
+    {% endif %}
 </div>
 {% for object in object_list %}
 <div class="col-3">
@@ -30,10 +32,14 @@
                 <a class="p-2 btn btn-outline-primary">Купить</a>
                 <a href="{% url 'catalog:product_card' object.pk %}"
                    class="p-2 btn btn-outline-primary">Подробнее</a>
+                {% if perms.catalog.change_product %}
                 <a href="{% url 'catalog:update_product' object.pk %}" type="button"
                    class="btn btn-lg btn-sm btn-outline-secondary">Изменить</a>
+                {% endif %}
+                {% if perms.catalog.delete_product %}
                 <a href="{% url 'catalog:delete_product' object.pk %}" type="button"
                    class="btn btn-lg btn-sm btn-outline-danger">Удалить</a>
+                {% endif %}
             </nav>
         </div>
     </div>

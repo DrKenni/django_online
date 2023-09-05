@@ -1,11 +1,13 @@
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.urls import reverse_lazy, reverse
 from django.views.generic import CreateView, ListView, DetailView, UpdateView, DeleteView
 from pytils.translit import slugify
 from materials.models import Materials
 
 
-class MaterialCreateView(CreateView):
+class MaterialCreateView(LoginRequiredMixin, CreateView):
     model = Materials
+    # permission_required = 'materials.add_post'
     fields = ('title', 'content', 'is_published', 'preview',)
     success_url = reverse_lazy('materials:list')
 
@@ -42,8 +44,9 @@ class MaterialDetailView(DetailView):
         return self.object
 
 
-class MaterialUpdateView(UpdateView):
+class MaterialUpdateView(LoginRequiredMixin, PermissionRequiredMixin, UpdateView):
     model = Materials
+    permission_required = 'materials.change_post'
     fields = ('title', 'content', 'is_published', 'preview',)
     success_url = reverse_lazy('materials:list')
 
@@ -59,6 +62,7 @@ class MaterialUpdateView(UpdateView):
         return reverse('materials:view', args=[self.kwargs.get('pk')])
 
 
-class MaterialDeleteView(DeleteView):
+class MaterialDeleteView(LoginRequiredMixin, PermissionRequiredMixin, DeleteView):
     model = Materials
+    permission_required = 'materials.delete_post'
     success_url = reverse_lazy('materials:list')

@@ -1,6 +1,5 @@
-{% autoescape off %}
+
 
 Привет {{ user.get_username }}
 Перейди по сылке чтобы закончить регистрацию
-http://{{ domain }}{% url 'verify_acc' uidb64=uid token=token %}
-{% endautoescape %}
+http://{{ domain }}{% url 'users:verify_acc' uidb64=uid token=token %}
