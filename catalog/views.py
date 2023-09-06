@@ -1,31 +1,35 @@
+
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.forms import inlineformset_factory
 from django.http import Http404
 from django.shortcuts import render
 from django.urls import reverse_lazy
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
 from catalog.forms import ProductForm, VersionForm
-from catalog.models import Product, Version
-from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from catalog.models import Product, Version, Category
+from catalog.services import get_category_list, get_product_versions_list
 
 
 class ProductListView(ListView):
     model = Product
 
-    extra_context = {
-        'title': 'Каталог'
-    }
-
     def get_context_data(self, *args, **kwargs):
         context_data = super().get_context_data(*args, **kwargs)
         version_list = Version.objects.all()
         context_data['formset'] = version_list
+        context_data['title'] = 'Каталог'
         return context_data
 
 
 class ProductDetailView(DetailView):
     model = Product
+
+    def get_context_data(self, *args, **kwargs):
+        context_data = super().get_context_data(*args, **kwargs)
+        context_data['versions'] = get_product_versions_list(self.object.pk)
+        return context_data
 
 
 class ProductCreateView(LoginRequiredMixin, PermissionRequiredMixin, CreateView):
@@ -91,6 +95,17 @@ class ProductDeleteView(LoginRequiredMixin, PermissionRequiredMixin, DeleteView)
         context_data = super().get_context_data(**kwargs)
         version_list = Version.objects.filter(pk=self.object.pk)
         context_data['formset'] = version_list
+        return context_data
+
+
+class CategoryListView(LoginRequiredMixin, ListView):
+    model = Category
+    template_name = 'catalog/product_category_list.html'
+
+    def get_context_data(self, **kwargs):
+        context_data = super().get_context_data(**kwargs)
+        context_data['object_list'] = get_category_list()
+        context_data['title'] = 'Категории'
         return context_data
 
 

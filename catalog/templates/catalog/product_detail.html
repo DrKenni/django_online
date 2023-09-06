@@ -10,7 +10,7 @@
         <li>Категория: {{ object.category }}</li>
         <li>Дата изготовления: {{ object.date_create }}</li>
         <li>Описание: {{ object.description|default:'Без описания' }}</li>
-        {% for form in object.version_set.all %}
+        {% for form in versions %}
         {% if form.version_sign %}
         <h5>Активная версия</h5>
         <li>- Номер версии: {{ form.version_number }}</li>

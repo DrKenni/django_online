@@ -17,6 +17,7 @@
             <ul class="list-unstyled mt-3 mb-4 text-start m-3">
                 <li>- Категория: {{ object.category }}</li>
                 <li>- Дата изготовления:</li>
+                <li>- Владелец: {{object.owner|default:"Без владельца"}}</li>
                 <li> {{ object.date_create }}</li>
                 <li>- Краткое описание:</li>
                 <li> {{ object.description|limit_symbols }}</li>

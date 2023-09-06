@@ -1,0 +1,29 @@
+{% extends 'catalog/base.html' %}
+{% block content %}
+{% load my_tags %}
+<div class="col-12 mb-2"></div>
+{% for object in object_list %}
+<div class="col-3">
+    <div class="card mb-4 box-shadow">
+        <img class="card-img-top"
+             src="{{ object.preview_img|mymedia }}"
+             alt="Card image cap">
+        <div class="card-header">
+            <h4 class="my-0 font-weight-normal">{{object.name}}</h4>
+        </div>
+        <div class="card-body">
+            <a href="#" type="button"
+               class="btn btn-lg btn-sm btn-outline-primary">Подробнее</a>
+            {% if perms.catalog.change_product %}
+            <a href="#" type="button"
+               class="btn btn-lg btn-sm btn-outline-secondary">Изменить</a>
+            {% endif %}
+            {% if perms.catalog.delete_product %}
+            <a href="#" type="button"
+               class="btn btn-lg btn-sm btn-outline-danger">Удалить</a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
